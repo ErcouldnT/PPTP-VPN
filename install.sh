@@ -6,12 +6,12 @@ ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
 
 # Installing pptpd
 echo "Installing PPTPD"
-sudo apt-get install pptpd -y
+sudo apt install pptpd -y
 
 # edit DNS
-echo "Setting Google DNS"
-sudo echo "ms-dns 8.8.8.8" >> /etc/ppp/pptpd-options
-sudo echo "ms-dns 8.8.4.4" >> /etc/ppp/pptpd-options
+echo "Setting Cloudflare DNS"
+sudo echo "ms-dns 1.1.1.1" >> /etc/ppp/pptpd-options
+sudo echo "ms-dns 1.0.0.1" >> /etc/ppp/pptpd-options
 
 # Edit PPTP Configuration
 echo "Editing PPTP Configuration"
